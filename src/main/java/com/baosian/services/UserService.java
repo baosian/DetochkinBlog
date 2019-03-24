@@ -1,4 +1,13 @@
 package com.baosian.services;
 
-public class UserService {
+import com.baosian.entity.User;
+
+import java.util.List;
+
+public interface UserService {
+
+    User addUser(User user);
+    void delete(Integer id);
+    User editUser(User user);
+    List<User> getAll();
 }
