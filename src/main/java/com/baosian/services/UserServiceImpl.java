@@ -13,23 +13,34 @@ public class UserServiceImpl implements UserService{
     @Autowired
     private UserRepository userRepository;
 
-    @Override
+    //@Override
     public User addUser(User user) {
         return userRepository.saveAndFlush(user);
     }
 
-    @Override
+   // @Override
     public void delete(Integer id) {
         userRepository.deleteById(id);
     }
 
-    @Override
+    //@Override
     public User editUser(User user) {
         return userRepository.saveAndFlush(user);
     }
 
-    @Override
+    //@Override
     public List<User> getAll() {
         return userRepository.findAll();
+    }
+
+    @Override
+    public boolean saveUser(User user){
+        try{
+            userRepository.save(user);
+            return true;
+        }catch (Exception ex){
+            return false;
+        }
+
     }
 }
